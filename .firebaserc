@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "buteco-b6074": {
+      "hosting": {
+        "boteco": [
+          "buteco-b6074"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "buteco-b6074"
+  }
+}
