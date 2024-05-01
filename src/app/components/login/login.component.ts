@@ -7,7 +7,6 @@ import { createUserWithEmailAndPassword, getAuth } from '@angular/fire/auth';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-<<<<<<< HEAD
   emailts: string = '';
   passwordts: string = '';
 
@@ -24,21 +23,4 @@ export class LoginComponent {
         // ..
       });
   }
-=======
-
-date: any
-
-
-saveDate(){
-
-localStorage.setItem('Data de teste', this.date)
-
-}
-
-removeDate(){
-  localStorage.removeItem('Data de teste')
-}
-
-
->>>>>>> 7534dbe (v 0.4)
 }
