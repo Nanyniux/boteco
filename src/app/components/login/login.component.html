@@ -1,4 +1,13 @@
 <h1>Iniciar Seção</h1>
 <div class="card flex justify-content-center">
-  <p-button label="Check" icon="pi pi-check"></p-button>
+  <p-button
+    (click)="login(emailts, passwordts)"
+    label="Check"
+    icon="pi pi-check"
+  ></p-button>
+</div>
+
+<div>
+  <input [value]="emailts" type="email" />
+  <input [value]="passwordts" type="password" />
 </div>

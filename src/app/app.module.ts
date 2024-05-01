@@ -40,6 +40,14 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { SpeedDialModule } from 'primeng/speeddial';
 import { DataViewModule } from 'primeng/dataview';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+//
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
+import { environment } from '../environments/environment.development';
 
 @NgModule({
   declarations: [
@@ -63,6 +71,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     BrowserAnimationsModule,
     ButtonModule,
     CalendarModule,
@@ -79,8 +88,22 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     SpeedDialModule,
     DataViewModule,
     ConfirmDialogModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideDatabase(() => getDatabase()),
   ],
   providers: [provideClientHydration(), provideAnimationsAsync('noop')],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  // app = initializeApp({
+  //   projectId: 'buteco-b6074',
+  //   appId: '1:570428800396:web:3062b511819ec4d529aaa9',
+  //   databaseURL: 'https://buteco-b6074-default-rtdb.firebaseio.com',
+  //   storageBucket: 'buteco-b6074.appspot.com',
+  //   apiKey: 'AIzaSyBx2DPPVMo3DeiXX8zKlaOqVYgAeDG8Wco',
+  //   authDomain: 'buteco-b6074.firebaseapp.com',
+  //   messagingSenderId: '570428800396',
+  // });
+}

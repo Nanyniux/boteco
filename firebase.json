@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "boteco",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "us-central1"
+      }
+    }
+  ]
+}
