@@ -87,17 +87,12 @@ import { environment } from '../environments/environment.development';
     PasswordModule,
     RadioButtonModule,
     SpeedDialModule,
-    DataViewModule,
+    DataViewModule,gi
     ConfirmDialogModule,
-<<<<<<< HEAD
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideDatabase(() => getDatabase()),
-=======
-    FormsModule,
-    ReactiveFormsModule,
->>>>>>> 7534dbe (v 0.4)
   ],
   providers: [provideClientHydration(), provideAnimationsAsync('noop')],
   bootstrap: [AppComponent],
