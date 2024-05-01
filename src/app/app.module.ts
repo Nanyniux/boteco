@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +22,7 @@ import { NewTableComponent } from './modals/new-table/new-table.component';
 import { CloseAccountComponent } from './modals/close-account/close-account.component';
 
 import { ConfirmationComponent } from './modals/confirmation/confirmation.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -37,15 +41,10 @@ import { ConfirmationComponent } from './modals/confirmation/confirmation.compon
     ViewProductsComponent,
     NewTableComponent,
     CloseAccountComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [
-    provideClientHydration()
-  ],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [provideClientHydration(), provideAnimationsAsync('noop')],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
