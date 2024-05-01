@@ -87,7 +87,7 @@ import { environment } from '../environments/environment.development';
     PasswordModule,
     RadioButtonModule,
     SpeedDialModule,
-    DataViewModule,gi
+    DataViewModule,
     ConfirmDialogModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
