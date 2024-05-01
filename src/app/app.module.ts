@@ -4,6 +4,8 @@ import {
   provideClientHydration,
 } from '@angular/platform-browser';
 
+import {FormBuilder, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -23,7 +25,6 @@ import { CloseAccountComponent } from './modals/close-account/close-account.comp
 
 import { ConfirmationComponent } from './modals/confirmation/confirmation.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-//
 import { ButtonModule } from 'primeng/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarModule } from 'primeng/calendar';
@@ -88,10 +89,15 @@ import { environment } from '../environments/environment.development';
     SpeedDialModule,
     DataViewModule,
     ConfirmDialogModule,
+<<<<<<< HEAD
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideDatabase(() => getDatabase()),
+=======
+    FormsModule,
+    ReactiveFormsModule,
+>>>>>>> 7534dbe (v 0.4)
   ],
   providers: [provideClientHydration(), provideAnimationsAsync('noop')],
   bootstrap: [AppComponent],

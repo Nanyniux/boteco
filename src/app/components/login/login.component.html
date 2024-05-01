@@ -1,5 +1,6 @@
 <h1>Iniciar Seção</h1>
 <div class="card flex justify-content-center">
+<<<<<<< HEAD
   <p-button
     (click)="login(emailts, passwordts)"
     label="Check"
@@ -10,4 +11,20 @@
 <div>
   <input [value]="emailts" type="email" />
   <input [value]="passwordts" type="password" />
+=======
+  <p-button (click)="saveDate()" label="Check" icon="pi pi-check"></p-button>
+</div>
+
+<div>
+  <p-calendar [(ngModel)]="date" ></p-calendar>
+
+</div>
+
+<div class="card flex justify-content-center">
+  <p-button (click)="removeDate()" label="Delete" icon="pi pi-check"></p-button>
+</div>
+
+<div>
+  <p> {{date}} </p>
+>>>>>>> 7534dbe (v 0.4)
 </div>
