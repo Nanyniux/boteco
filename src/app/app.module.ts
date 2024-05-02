@@ -84,7 +84,6 @@ import { environment } from '../environments/environment.development';
     ConfirmDialogModule,
     FormsModule,
     ReactiveFormsModule,
-
   ],
   providers: [provideClientHydration(), provideAnimationsAsync('noop')],
   bootstrap: [AppComponent],
