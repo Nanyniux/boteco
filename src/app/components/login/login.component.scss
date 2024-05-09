@@ -1,0 +1,75 @@
+// * {
+//   padding: 0;
+//   margin: 0;
+// }
+// #login {
+//   border: solid 1px chocolate;
+//   background-color: azure;
+//   width: 300px;
+//   padding: 1rem;
+//   margin: auto;
+//   border-radius: 6px;
+// }
+// #login:hover {
+//   background-color: gray;
+// }
+
+body {
+  background-image: linear-gradient(to right, #797675, #343434);
+}
+
+#login1 {
+  margin: auto;
+  margin-top: 4rem;
+  width: 300px;
+  border: solid 1px green;
+}
+img {
+  width: 150px;
+  margin-left: 70px;
+}
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+  outline: none; /* Remove o contorno ao focar */
+  width: 200px;
+  padding: 9px;
+  background: transparent;
+}
+
+button {
+  width: 220px;
+  padding: 8px;
+  margin-right: 0px;
+  background: transparent;
+  margin-top: 5px;
+}
+button {
+  border: none;
+}
+
+button:hover {
+  background-color: gray;
+}
+
+.formulario {
+  margin-left: 36px;
+}
+// button {
+//   margin-left: 70px;
+//   padding: 5px;
+// }
+
+#g {
+  width: 230px;
+}

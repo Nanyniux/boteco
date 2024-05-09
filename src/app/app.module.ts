@@ -4,7 +4,13 @@ import {
   provideClientHydration,
 } from '@angular/platform-browser';
 
-import {FormBuilder, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  // FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,6 +50,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 //
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { AngularFireModule } from '@angular/fire/compat';
+// import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
@@ -89,6 +96,8 @@ import { environment } from '../environments/environment.development';
     SpeedDialModule,
     DataViewModule,
     ConfirmDialogModule,
+    FormsModule,
+
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
