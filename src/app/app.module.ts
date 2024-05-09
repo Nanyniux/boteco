@@ -47,6 +47,8 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { SpeedDialModule } from 'primeng/speeddial';
 import { DataViewModule } from 'primeng/dataview';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
+
 //
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -97,6 +99,7 @@ import { environment } from '../environments/environment.development';
     DataViewModule,
     ConfirmDialogModule,
     FormsModule,
+    ToastModule,
 
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),

@@ -1,8 +1,7 @@
 <!-- <h1>Iniciar Seção</h1>
 <div class="card flex justify-content-center">
-  <p-button label="Check" icon="pi pi-check"></p-button>
 </div> -->
-<!-- <body> -->
+<body>
 <div id="login1" *ngIf="!logado">
   <img src="../../../assets/imgs/user-icon-png.webp" alt="kjkjkj" />
   <!-- <h1>Login</h1> -->
@@ -11,20 +10,24 @@
     <input type="email" name="email" ngModel placeholder="Email" /><br />
     <i class="fa-solid fa-unlock"></i>
     <input type="password" name="password" ngModel placeholder="Senha" /><br />
+  <p-toast />
     <button type="submit">Entrar</button>
   </form>
 </div>
 
+<div *ngIf="!logado" >
+<p>{{msg}}</p>
+</div>
+
 <div *ngIf="logado">
   <h2>Login efetuado</h2>
-
   <button (click)="logout()">Logout</button>
 
 
 </div>
 
 
-<!-- </body> -->
+</body>
 
 <!-- <body>
   <form

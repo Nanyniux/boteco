@@ -2,24 +2,25 @@ import { Component, OnInit } from '@angular/core';
 import { createUserWithEmailAndPassword, getAuth } from '@angular/fire/auth';
 import { NgForm } from '@angular/forms';
 import { ServiceService } from '../../services/service.service';
+import { MessageService } from 'primeng/api';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
+  providers: [MessageService]
+
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   person: any;
   logado = localStorage.getItem('log') || ''
+  msg = ''
+
+  constructor(private authService: ServiceService, private messageService: MessageService) {}
 
 
-  constructor(private authService: ServiceService) {}
 
-
-  ngOnInit(): void {
-
-
-  }
 
   onSubmit(form: NgForm) {
     const email = form.value.email;
@@ -38,6 +39,11 @@ export class LoginComponent implements OnInit {
         // Login bem-sucedido, faça o que for necessário
       })
       .catch((error) => {
+
+        this.messageService.add({ severity: 'warn', summary: 'Warn', detail: 'Login incorreto' });
+
+
+        console.log(error)
         // Trate os erros de login
       });
   }
