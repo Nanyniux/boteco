@@ -8,11 +8,18 @@ import { ServiceService } from '../../services/service.service';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   person: any;
-  logado: any;
+  logado = localStorage.getItem('log') || ''
+
 
   constructor(private authService: ServiceService) {}
+
+
+  ngOnInit(): void {
+
+
+  }
 
   onSubmit(form: NgForm) {
     const email = form.value.email;
@@ -20,11 +27,15 @@ export class LoginComponent {
     this.authService
       .signIn(email, password)
       .then((response) => {
+        if (response.user?.uid) {
+
+          console.log(response.user?.uid);
+          console.log('deu certo');
+          localStorage.setItem('log', response.user?.uid as string);
+          this.logado = response.user.uid
+
+        }
         // Login bem-sucedido, faça o que for necessário
-        console.log(response.user?.uid);
-        console.log('deu certo');
-        localStorage.setItem('log', response.user?.uid as string);
-        this.logado = response.user?.uid;
       })
       .catch((error) => {
         // Trate os erros de login
@@ -45,4 +56,9 @@ export class LoginComponent {
   //       // ..
   //     });
   // }
+
+  logout(){
+    localStorage.removeItem('log')
+    this.logado = ''
+  }
 }
