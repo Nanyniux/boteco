@@ -1,49 +1,31 @@
-<!-- <h1>Iniciar Seção</h1>
-<div class="card flex justify-content-center">
-  <p-button label="Check" icon="pi pi-check"></p-button>
-</div> -->
-<!-- <body> -->
-<div id="login1" *ngIf="!logado">
-  <img src="../../../assets/imgs/user-icon-png.webp" alt="kjkjkj" />
-  <!-- <h1>Login</h1> -->
-  <form class="formulario" #form="ngForm" (ngSubmit)="onSubmit(form)">
-    <i class="fa-regular fa-envelope"></i>
-    <input type="email" name="email" ngModel placeholder="Email" /><br />
-    <i class="fa-solid fa-unlock"></i>
-    <input type="password" name="password" ngModel placeholder="Senha" /><br />
-    <button type="submit">Entrar</button>
-  </form>
-</div>
+<body>
+  <div id="login" *ngIf="!logado">
+    <img src="../../../assets/imgs/user-icon-png.webp" alt="" />
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <!-- <i class="fa-regular fa-envelope iconeImg"></i> -->
+      <input
+        class="inputs"
+        pInputText
+        type="email"
+        name="email"
+        ngModel
+        placeholder="Email"
+      /><br />
+      <!-- <i class="fa-solid fa-unlock iconeImg"></i> -->
+      <p-password
+        class="inputs"
+        type="password"
+        name="password"
+        ngModel
+        placeholder="Senha"
+      /><br />
+      <p-button class="buttonEntrar" type="submit">Entrar</p-button>
+    </form>
+  </div>
 
-<div *ngIf="logado">
-  <h2>Login efetuado</h2>
+  <div *ngIf="logado">
+    <h2>Login efetuado</h2>
 
-  <button (click)="logout()">Logout</button>
-
-
-</div>
-
-
-<!-- </body> -->
-
-<!-- <body>
-  <form
-    id="login1"
-    class="formulario"
-    #form="ngForm"
-    (ngSubmit)="onSubmit(form)"
-  >
-    <img src="../../../assets/imgs/user-icon-png.webp" alt="kjkjkj" />
-    <ul>
-      <li id="campoEmail">
-        <i class="fa-regular fa-envelope"></i>
-        <input type="text" ngModel placeholder="Email ID" />
-      </li>
-      <li id="campoSenha">
-        <i class="fa-solid fa-unlock"></i>
-        <input type="password" ngModel placeholder="Senha" />
-      </li>
-    </ul>
-    <button type="submit">Entrar</button>
-  </form>
-</body> -->
+    <p-button (click)="logout()">Logout</p-button>
+  </div>
+</body>
