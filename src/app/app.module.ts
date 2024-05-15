@@ -4,6 +4,7 @@ import {
   provideClientHydration,
 } from '@angular/platform-browser';
 
+
 import {FormBuilder, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -41,9 +42,14 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { SpeedDialModule } from 'primeng/speeddial';
 import { DataViewModule } from 'primeng/dataview';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+
+
 //
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { AngularFireModule } from '@angular/fire/compat';
+// import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
@@ -89,6 +95,9 @@ import { environment } from '../environments/environment.development';
     SpeedDialModule,
     DataViewModule,
     ConfirmDialogModule,
+    FormsModule,
+    ToastModule,
+
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
@@ -98,13 +107,13 @@ import { environment } from '../environments/environment.development';
   bootstrap: [AppComponent],
 })
 export class AppModule {
-  app = initializeApp({
-    projectId: 'buteco-b6074',
-    appId: '1:570428800396:web:3062b511819ec4d529aaa9',
-    databaseURL: 'https://buteco-b6074-default-rtdb.firebaseio.com',
-    storageBucket: 'buteco-b6074.appspot.com',
-    apiKey: 'AIzaSyBx2DPPVMo3DeiXX8zKlaOqVYgAeDG8Wco',
-    authDomain: 'buteco-b6074.firebaseapp.com',
-    messagingSenderId: '570428800396',
-  });
+  // app = initializeApp({
+  //   projectId: 'buteco-b6074',
+  //   appId: '1:570428800396:web:3062b511819ec4d529aaa9',
+  //   databaseURL: 'https://buteco-b6074-default-rtdb.firebaseio.com',
+  //   storageBucket: 'buteco-b6074.appspot.com',
+  //   apiKey: 'AIzaSyBx2DPPVMo3DeiXX8zKlaOqVYgAeDG8Wco',
+  //   authDomain: 'buteco-b6074.firebaseapp.com',
+  //   messagingSenderId: '570428800396',
+  // });
 }
