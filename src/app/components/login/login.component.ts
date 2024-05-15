@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ServiceService } from '../../services/service.service';
 import { MessageService } from 'primeng/api';
+import { link } from 'fs';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,11 @@ export class LoginComponent {
   person: any;
   logado = localStorage.getItem('log') || '';
   msg = '';
+  objs = [
+    { nome: ' ', link: '/casa' },
+    { nome: ' novo pedido', link: '/novo-pedido' },
+    { nome: ' apagar pedido', link: '/apagar-pedido' },
+  ];
 
   constructor(
     private authService: ServiceService,

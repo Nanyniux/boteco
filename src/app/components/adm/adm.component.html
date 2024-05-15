@@ -1,2 +1,9 @@
 <h1>Administrador</h1>
 <p>Bem vindo</p>
+<div *ngFor="let product of list">
+  <p>
+    {{ product.nome }} - {{ product.idade }}
+    <p-button label="apagar"></p-button>
+    <p-button label="adicionar"></p-button>
+  </p>
+</div>
