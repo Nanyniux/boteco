@@ -78,7 +78,6 @@ import { environment } from '../environments/environment.development';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
     BrowserAnimationsModule,
     ButtonModule,
     CalendarModule,
@@ -96,17 +95,22 @@ import { environment } from '../environments/environment.development';
     DataViewModule,
     ConfirmDialogModule,
     FormsModule,
+
+    ReactiveFormsModule,
+
     ToastModule,
 
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideDatabase(() => getDatabase()),
+
   ],
   providers: [provideClientHydration(), provideAnimationsAsync('noop')],
   bootstrap: [AppComponent],
 })
 export class AppModule {
+
   // app = initializeApp({
   //   projectId: 'buteco-b6074',
   //   appId: '1:570428800396:web:3062b511819ec4d529aaa9',
