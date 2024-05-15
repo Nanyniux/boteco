@@ -4,13 +4,8 @@ import {
   provideClientHydration,
 } from '@angular/platform-browser';
 
-import {
-  FormBuilder,
-  FormControl,
-  // FormsModule,
-  ReactiveFormsModule,
-} from '@angular/forms';
-import { FormsModule } from '@angular/forms';
+
+import {FormBuilder, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -47,7 +42,14 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { SpeedDialModule } from 'primeng/speeddial';
 import { DataViewModule } from 'primeng/dataview';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+<<<<<<< HEAD
 import { InputTextModule } from 'primeng/inputtext';
+=======
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+
+
+>>>>>>> 1e85c7d74edb4cc8250419a8aaa279f51eefcd3d
 //
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -100,7 +102,11 @@ import { FloatLabelModule } from 'primeng/floatlabel';
     DataViewModule,
     ConfirmDialogModule,
     FormsModule,
+<<<<<<< HEAD
     InputTextModule,
+=======
+    ToastModule,
+>>>>>>> 1e85c7d74edb4cc8250419a8aaa279f51eefcd3d
 
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
