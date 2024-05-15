@@ -4,13 +4,8 @@ import {
   provideClientHydration,
 } from '@angular/platform-browser';
 
-import {
-  FormBuilder,
-  FormControl,
-  // FormsModule,
-  ReactiveFormsModule,
-} from '@angular/forms';
-import { FormsModule } from '@angular/forms';
+
+import {FormBuilder, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
