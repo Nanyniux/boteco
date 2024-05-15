@@ -1,35 +1,23 @@
-
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ServiceService } from '../../services/service.service';
 import { MessageService } from 'primeng/api';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
-  providers: [MessageService]
-
+  providers: [MessageService],
 })
-
-export class LoginComponent implements OnInit {
-  logado = localStorage.getItem('log') || '';
-
 export class LoginComponent {
-
   person: any;
-  logado = localStorage.getItem('log') || ''
-  msg = ''
+  logado = localStorage.getItem('log') || '';
+  msg = '';
 
-  constructor(private authService: ServiceService, private messageService: MessageService) {}
-
-
-
-
-
-  ngOnInit(): void {}
-
+  constructor(
+    private authService: ServiceService,
+    private messageService: MessageService
+  ) {}
 
   onSubmit(form: NgForm) {
     const email = form.value.email;
@@ -46,18 +34,19 @@ export class LoginComponent {
         // Login bem-sucedido, faça o que for necessário
       })
       .catch((error) => {
+        this.messageService.add({
+          severity: 'warn',
+          summary: 'Warn',
+          detail: 'Login incorreto',
+        });
 
-        this.messageService.add({ severity: 'warn', summary: 'Warn', detail: 'Login incorreto' });
-
-
-        console.log(error)
+        console.log(error);
         // Trate os erros de login
       });
   }
 
   // emailts: string = '';
   // passwordts: string = '';
-
 
   logout() {
     localStorage.removeItem('log');
