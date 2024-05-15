@@ -42,15 +42,12 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { SpeedDialModule } from 'primeng/speeddial';
 import { DataViewModule } from 'primeng/dataview';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-<<<<<<< HEAD
+
 import { InputTextModule } from 'primeng/inputtext';
-=======
+
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 
-
->>>>>>> 1e85c7d74edb4cc8250419a8aaa279f51eefcd3d
-//
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { AngularFireModule } from '@angular/fire/compat';
 // import { AngularFireModule } from '@angular/fire';
@@ -83,8 +80,10 @@ import { FloatLabelModule } from 'primeng/floatlabel';
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     FloatLabelModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+
     BrowserAnimationsModule,
     ButtonModule,
     CalendarModule,
@@ -102,21 +101,21 @@ import { FloatLabelModule } from 'primeng/floatlabel';
     DataViewModule,
     ConfirmDialogModule,
     FormsModule,
-<<<<<<< HEAD
     InputTextModule,
-=======
+    ReactiveFormsModule,
     ToastModule,
->>>>>>> 1e85c7d74edb4cc8250419a8aaa279f51eefcd3d
 
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideDatabase(() => getDatabase()),
+
   ],
   providers: [provideClientHydration(), provideAnimationsAsync('noop')],
   bootstrap: [AppComponent],
 })
 export class AppModule {
+
   // app = initializeApp({
   //   projectId: 'buteco-b6074',
   //   appId: '1:570428800396:web:3062b511819ec4d529aaa9',

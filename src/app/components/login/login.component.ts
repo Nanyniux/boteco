@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ServiceService } from '../../services/service.service';
@@ -11,24 +12,24 @@ import { MessageService } from 'primeng/api';
   providers: [MessageService]
 
 })
-<<<<<<< HEAD
+
 export class LoginComponent implements OnInit {
   logado = localStorage.getItem('log') || '';
-=======
+
 export class LoginComponent {
+
   person: any;
   logado = localStorage.getItem('log') || ''
   msg = ''
 
   constructor(private authService: ServiceService, private messageService: MessageService) {}
 
->>>>>>> 1e85c7d74edb4cc8250419a8aaa279f51eefcd3d
 
 
-<<<<<<< HEAD
+
+
   ngOnInit(): void {}
-=======
->>>>>>> 1e85c7d74edb4cc8250419a8aaa279f51eefcd3d
+
 
   onSubmit(form: NgForm) {
     const email = form.value.email;
@@ -53,6 +54,10 @@ export class LoginComponent {
         // Trate os erros de login
       });
   }
+
+  // emailts: string = '';
+  // passwordts: string = '';
+
 
   logout() {
     localStorage.removeItem('log');
