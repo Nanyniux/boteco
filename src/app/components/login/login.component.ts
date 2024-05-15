@@ -1,6 +1,5 @@
 
 import { Component, OnInit } from '@angular/core';
-import { createUserWithEmailAndPassword, getAuth } from '@angular/fire/auth';
 import { NgForm } from '@angular/forms';
 import { ServiceService } from '../../services/service.service';
 import { MessageService } from 'primeng/api';
@@ -13,6 +12,10 @@ import { MessageService } from 'primeng/api';
   providers: [MessageService]
 
 })
+
+export class LoginComponent implements OnInit {
+  logado = localStorage.getItem('log') || '';
+
 export class LoginComponent {
 
   person: any;
@@ -24,6 +27,10 @@ export class LoginComponent {
 
 
 
+
+  ngOnInit(): void {}
+
+
   onSubmit(form: NgForm) {
     const email = form.value.email;
     const password = form.value.password;
@@ -31,12 +38,10 @@ export class LoginComponent {
       .signIn(email, password)
       .then((response) => {
         if (response.user?.uid) {
-
           console.log(response.user?.uid);
           console.log('deu certo');
           localStorage.setItem('log', response.user?.uid as string);
-          this.logado = response.user.uid
-
+          this.logado = response.user.uid;
         }
         // Login bem-sucedido, faça o que for necessário
       })
@@ -49,13 +54,13 @@ export class LoginComponent {
         // Trate os erros de login
       });
   }
+
   // emailts: string = '';
   // passwordts: string = '';
 
 
-
-  logout(){
-    localStorage.removeItem('log')
-    this.logado = ''
+  logout() {
+    localStorage.removeItem('log');
+    this.logado = '';
   }
 }

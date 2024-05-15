@@ -42,11 +42,12 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { SpeedDialModule } from 'primeng/speeddial';
 import { DataViewModule } from 'primeng/dataview';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+
+import { InputTextModule } from 'primeng/inputtext';
+
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 
-
-//
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { AngularFireModule } from '@angular/fire/compat';
 // import { AngularFireModule } from '@angular/fire';
@@ -55,6 +56,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { environment } from '../environments/environment.development';
+import { FloatLabelModule } from 'primeng/floatlabel';
 
 @NgModule({
   declarations: [
@@ -78,6 +80,10 @@ import { environment } from '../environments/environment.development';
   imports: [
     BrowserModule,
     AppRoutingModule,
+
+    FloatLabelModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+
     BrowserAnimationsModule,
     ButtonModule,
     CalendarModule,
@@ -95,9 +101,8 @@ import { environment } from '../environments/environment.development';
     DataViewModule,
     ConfirmDialogModule,
     FormsModule,
-
+    InputTextModule,
     ReactiveFormsModule,
-
     ToastModule,
 
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
