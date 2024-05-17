@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-adm',
@@ -6,11 +7,15 @@ import { Component } from '@angular/core';
   styleUrl: './adm.component.scss',
 })
 export class AdmComponent {
+  constructor(private router: Router) {}
+
   list = [
-    { nome: `Felipe`, endereco: `Rua Jaime Neto`, idade: `34` },
-    { nome: `Ione`, endereco: `Rua Tal`, idade: `18` },
-    { nome: `Lucas`, endereco: `Rua Jaime Neto`, idade: `34` },
-    { nome: `Maria`, endereco: `Rua Jaime Neto`, idade: `34` },
-    { nome: `José`, endereco: `Rua Jaime Neto`, idade: `34` },
+    { nome: `Produtos`, routerLink: '' },
+    { nome: `Estoque`, routerLink: '/stock' },
+    { nome: `Usuários`, routerLink: '' },
+    { nome: `Histórico`, routerLink: '' },
+    { nome: `Mesas`, routerLink: '/tables' },
+    { nome: `Pedidos`, routerLink: '' },
+    { nome: `Gorjetas`, routerLink: '' },
   ];
 }
