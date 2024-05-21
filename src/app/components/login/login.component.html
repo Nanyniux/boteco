@@ -1,32 +1,14 @@
 <body>
   <div id="login" *ngIf="!logado">
     <img src="../../../assets/imgs/user-icon-png.webp" alt="" />
-    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-      <!-- <i class="fa-regular fa-envelope iconeImg"></i> -->
-      <input
-        class="inputs"
-        pInputText
-        type="email"
-        name="email"
-        ngModel
-        placeholder="Email"
-      /><br />
-      <!-- <i class="fa-solid fa-unlock iconeImg"></i> -->
-      <p-password
-        class="inputs"
-        type="password"
-        name="password"
-        ngModel
-        placeholder="Senha"
-        [feedback]="false"
-      /><br />
-      <p-button class="buttonEntrar" type="submit">Entrar</p-button>
-    </form>
+    <input type="text">
+    <input type="password" name="" id="">
+
   </div>
 
   <div *ngIf="logado">
     <h2>Login efetuado</h2>
 
-    <p-button (click)="logout()">Logout</p-button>
+    <button (click)="logout()">Logout</button>
   </div>
 </body>

@@ -26,37 +26,8 @@ import { CloseAccountComponent } from './modals/close-account/close-account.comp
 
 import { ConfirmationComponent } from './modals/confirmation/confirmation.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { ButtonModule } from 'primeng/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CalendarModule } from 'primeng/calendar';
-import { CheckboxModule } from 'primeng/checkbox';
-import { DropdownModule } from 'primeng/dropdown';
-import { IconFieldModule } from 'primeng/iconfield';
-import { InputIconModule } from 'primeng/inputicon';
-import { InputGroupModule } from 'primeng/inputgroup';
-import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
-import { SelectButtonModule } from 'primeng/selectbutton';
-import { ToggleButtonModule } from 'primeng/togglebutton';
-import { PasswordModule } from 'primeng/password';
-import { RadioButtonModule } from 'primeng/radiobutton';
-import { SpeedDialModule } from 'primeng/speeddial';
-import { DataViewModule } from 'primeng/dataview';
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
-import { InputTextModule } from 'primeng/inputtext';
-
-import { ToastModule } from 'primeng/toast';
-import { MessageService } from 'primeng/api';
-
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { AngularFireModule } from '@angular/fire/compat';
-// import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { getAuth, provideAuth } from '@angular/fire/auth';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { getDatabase, provideDatabase } from '@angular/fire/database';
-import { environment } from '../environments/environment.development';
-import { FloatLabelModule } from 'primeng/floatlabel';
 
 @NgModule({
   declarations: [
@@ -80,35 +51,9 @@ import { FloatLabelModule } from 'primeng/floatlabel';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
-    FloatLabelModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-
     BrowserAnimationsModule,
-    ButtonModule,
-    CalendarModule,
-    CheckboxModule,
-    DropdownModule,
-    IconFieldModule,
-    InputIconModule,
-    InputGroupModule,
-    InputGroupAddonModule,
-    SelectButtonModule,
-    ToggleButtonModule,
-    PasswordModule,
-    RadioButtonModule,
-    SpeedDialModule,
-    DataViewModule,
-    ConfirmDialogModule,
     FormsModule,
-    InputTextModule,
     ReactiveFormsModule,
-    ToastModule,
-
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
-    provideDatabase(() => getDatabase()),
 
   ],
   providers: [provideClientHydration(), provideAnimationsAsync('noop')],
