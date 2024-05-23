@@ -1,14 +1,40 @@
-<body>
-  <div id="login" *ngIf="!logado">
-    <img src="../../../assets/imgs/user-icon-png.webp" alt="" />
-    <input type="text">
-    <input type="password" name="" id="">
+<div class="container">
+  <div id="login">
+    <h1>Nome do estabelicimento</h1>
+    <img
+      src="https://img.freepik.com/vetores-gratis/modelo-de-logotipo-de-loja-do-instagram-gradiente_23-2149704603.jpg?size=626&ext=jpg&uid=R149792915&ga=GA1.1.255073989.1712943912&semt=ais_user"
+      alt=""
+    />
 
+    <div>
+      <mat-form-field class="btnn">
+        <mat-label>Email</mat-label>
+        <input
+          type="email"
+          matInput
+          [formControl]="emailFormControl"
+          placeholder="Ex. pat@example.com"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="btnn">
+        <mat-label>Senha</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="btnEnter">
+      <button mat-flat-button color="primary">Entrar</button>
+    </div>
   </div>
-
-  <div *ngIf="logado">
-    <h2>Login efetuado</h2>
-
-    <button (click)="logout()">Logout</button>
-  </div>
-</body>
+</div>
