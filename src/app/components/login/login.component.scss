@@ -1,39 +1,51 @@
-body {
-  background: linear-gradient(to right, #9b92ea, #b0d7f5);
+.container {
+  display: flex;
 }
-
 #login {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 2px rgb(191, 193, 189);
-  border: none;
-  width: 300px;
+  // border: solid 1px #548f19;
+  // border: none;
+  width: 500px;
   margin: auto;
-  margin-top: 100px;
 }
-
 img {
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
   width: 150px;
+  margin-top: 15px;
   margin-bottom: 15px;
+  border-radius: 6px;
 }
-
-.inputs {
-  // position: relative;
-  margin-bottom: 10px;
-}
-
-// .iconeImg {
-//   position: absolute;
-//   z-index: 1;
-//   transform: translateY(-50%);
-//   top: 50%;
-// }
-
-.buttonEntrar {
+h1 {
+  // color: #3f51b5;
+  margin-top: 0;
   display: flex;
-  justify-content: center;
-  margin-top: 10px;
+  text-align: center;
+}
+
+.input {
+  width: 400px;
+}
+
+.btnEnter{
+  display: flex;
+}
+
+
+.btnEnterField{
+  width: 200px;
+  height: 60px;
+
+}
+
+@media (max-width: 390px) {
+  .input {
+    width: 90vw !important;
+  }
+
+  .btnEnterField{
+    width: 90vw !important;
+  }
 }

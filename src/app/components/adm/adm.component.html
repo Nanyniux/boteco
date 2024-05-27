@@ -1,2 +1,18 @@
-<h1>Administrador</h1>
-<p>Bem vindo</p>
+<div class="container">
+  <h1>Administrador</h1>
+  <div class="buttons">
+    <div class="name">
+      <h2>Nome do estabelecimento</h2>
+    </div>
+    <button
+      class="btn"
+      mat-flat-button
+      *ngFor="let product of list; let i = index"
+      [class]="'product-class product-' + i"
+      color="primary"
+    >
+      <i class="fa-solid fa-list"></i>
+      {{ product.nome }}
+    </button>
+  </div>
+</div>

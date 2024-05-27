@@ -1,33 +1,42 @@
+<div class="container">
+  <div id="login">
+    <h1>{{barName}}</h1>
+    <img
+      [src]="barLogo"
+      alt="Logo"
+    />
 
-<body>
-  <div id="login" *ngIf="!logado">
-    <img src="../../../assets/imgs/user-icon-png.webp" alt="" />
-    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-      <!-- <i class="fa-regular fa-envelope iconeImg"></i> -->
-      <input
-        class="inputs"
-        pInputText
-        type="email"
-        name="email"
-        ngModel
-        placeholder="Email"
-      /><br />
-      <!-- <i class="fa-solid fa-unlock iconeImg"></i> -->
-      <p-password
-        class="inputs"
-        type="password"
-        name="password"
-        ngModel
-        placeholder="Senha"
-      /><br />
-      <p-button class="buttonEntrar" type="submit">Entrar</p-button>
-    </form>
+    <div>
+      <mat-form-field class="input">
+        <mat-label>Email</mat-label>
+        <input
+          type="email"
+          matInput
+          [formControl]="emailFormControl"
+          placeholder="Ex. meuemail@gmail.com"
+          />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="input">
+        <mat-label>Senha</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" [formControl]="passwordFormControl"/>
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="btnEnter">
+      <button class="btnEnterField" mat-flat-button color="primary" (click)="login(emailFormControl.value, passwordFormControl.value)">Entrar</button>
+    </div>
+    <div style="color: red;">{{msg}}</div>
   </div>
-
-  <div *ngIf="logado">
-    <h2>Login efetuado</h2>
-
-    <p-button (click)="logout()">Logout</p-button>
-  </div>
-</body>
+</div>
 
