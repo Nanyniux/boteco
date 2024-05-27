@@ -38,16 +38,14 @@ export class LoginComponent {
   msg = '';
   barName = environment.barName;
   barLogo = environment.barLogo;
-  objs = [
-    { nome: ' ', link: '/casa' },
-    { nome: ' novo pedido', link: '/novo-pedido' },
-    { nome: ' apagar pedido', link: '/apagar-pedido' },
-  ];
 
-  constructor(private userData: UserDataService, private router: Router, private _snackBar: MatSnackBar) {}
+
+  constructor( private router: Router, private _snackBar: MatSnackBar) {}
 
   async login(email: string, password: string) {
+
     const auth = getAuth();
+
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;

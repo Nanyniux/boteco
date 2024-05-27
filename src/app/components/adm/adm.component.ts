@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-adm',
@@ -9,13 +10,15 @@ import { Router } from '@angular/router';
 export class AdmComponent {
   constructor(private router: Router) {}
 
+  barName = environment.barName
+
   list = [
-    { nome: `Produtos`, routerLink: '' },
-    { nome: `Estoque`, routerLink: '/stock' },
-    { nome: `Usuários`, routerLink: '' },
-    { nome: `Histórico`, routerLink: '' },
-    { nome: `Mesas`, routerLink: '/tables' },
-    { nome: `Pedidos`, routerLink: '' },
-    { nome: `Gorjetas`, routerLink: '' },
+    { nome: `Produtos`, routerLink: '', icon:'width_full' },
+    { nome: `Estoque`, routerLink: '/stock', icon:'event_list' },
+    { nome: `Usuários`, routerLink: '', icon:'progress_activity' },
+    { nome: `Histórico`, routerLink: '', icon:'swipe_left_alt' },
+    { nome: `Mesas`, routerLink: '/tables', icon:'keyboard_option_key' },
+    { nome: `Pedidos`, routerLink: '', icon:'' },
+    { nome: `Gorjetas`, routerLink: '', icon:'' },
   ];
 }
