@@ -1,26 +1,26 @@
 <div class="container">
   <div id="login">
-    <h1>Nome do estabelicimento</h1>
+    <h1>{{barName}}</h1>
     <img
-      src="https://img.freepik.com/vetores-gratis/modelo-de-logotipo-de-loja-do-instagram-gradiente_23-2149704603.jpg?size=626&ext=jpg&uid=R149792915&ga=GA1.1.255073989.1712943912&semt=ais_user"
-      alt=""
+      [src]="barLogo"
+      alt="Logo"
     />
 
     <div>
-      <mat-form-field class="btnn">
+      <mat-form-field class="input">
         <mat-label>Email</mat-label>
         <input
           type="email"
           matInput
           [formControl]="emailFormControl"
-          placeholder="Ex. pat@example.com"
-        />
+          placeholder="Ex. meuemail@gmail.com"
+          />
       </mat-form-field>
     </div>
     <div>
-      <mat-form-field class="btnn">
+      <mat-form-field class="input">
         <mat-label>Senha</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" />
+        <input matInput [type]="hide ? 'password' : 'text'" [formControl]="passwordFormControl"/>
         <button
           mat-icon-button
           matSuffix
@@ -34,7 +34,9 @@
     </div>
 
     <div class="btnEnter">
-      <button mat-flat-button color="primary">Entrar</button>
+      <button class="btnEnterField" mat-flat-button color="primary" (click)="login(emailFormControl.value, passwordFormControl.value)">Entrar</button>
     </div>
+    <div style="color: red;">{{msg}}</div>
   </div>
 </div>
+

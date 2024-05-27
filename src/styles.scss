@@ -36,6 +36,10 @@ $boteco-theme: mat.define-light-theme(
 // that you are using.
 @include mat.all-component-themes($boteco-theme);
 
+* {
+  margin: 0;
+  padding: 0;
+}
 section {
   padding: 0 2rem;
 }
@@ -54,5 +58,12 @@ body {
 }
 
 .container {
-  background: linear-gradient(to right, #f7f8f8, #e5eefe);
+  height: 100%;
+  // background: linear-gradient(to right, #294343, #364868);
+  background: linear-gradient(to right, #f7f8f8, #abb9d3);
+}
+
+h1,
+h2 {
+  color: #3f51b5;
 }

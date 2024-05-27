@@ -4,6 +4,7 @@ import {
   provideClientHydration,
 } from '@angular/platform-browser';
 
+import { initializeApp } from "firebase/app";
 import {
   FormBuilder,
   FormControl,
@@ -38,11 +39,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDividerModule } from '@angular/material/divider';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+
+
+
+
+import { environment } from '../environments/environment.development';
 
 @NgModule({
   declarations: [
     AppComponent,
-
     LoginComponent,
     AdmComponent,
     WaiterComponent,
@@ -67,6 +73,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatButtonModule,
     MatFormFieldModule,
     MatDividerModule,
+    MatSnackBarModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -80,13 +87,7 @@ import { MatDividerModule } from '@angular/material/divider';
   bootstrap: [AppComponent],
 })
 export class AppModule {
-  // app = initializeApp({
-  //   projectId: 'buteco-b6074',
-  //   appId: '1:570428800396:web:3062b511819ec4d529aaa9',
-  //   databaseURL: 'https://buteco-b6074-default-rtdb.firebaseio.com',
-  //   storageBucket: 'buteco-b6074.appspot.com',
-  //   apiKey: 'AIzaSyBx2DPPVMo3DeiXX8zKlaOqVYgAeDG8Wco',
-  //   authDomain: 'buteco-b6074.firebaseapp.com',
-  //   messagingSenderId: '570428800396',
-  // });
+
+  app = initializeApp(environment.firebaseConfig);
+
 }
