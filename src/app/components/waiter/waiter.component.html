@@ -1,1 +1,24 @@
-<h1>Pagina do Garçom</h1>
+<div class="container">
+  <h1>Garçom</h1>
+  <div class="section-container">
+    <div class="buttons">
+      <!--  -->
+      <div class="section">
+        <div class="name">
+          <h2>{{ barName }}</h2>
+        </div>
+        <div class="status">
+          <div class="pedidos-prontos">
+            <span>{{ pedidosProntos }}</span>
+          </div>
+          <span class="text">Pedidos Prontos</span>
+        </div>
+      </div>
+      <!--  -->
+      <button mat-flat-button *ngFor="let product of list" color="primary">
+        <mat-icon>{{ product.icon }}</mat-icon>
+        {{ product.nome }}
+      </button>
+    </div>
+  </div>
+</div>

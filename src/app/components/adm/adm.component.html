@@ -1,17 +1,12 @@
 <div class="container">
   <h1>Administrador</h1>
   <div class="buttons">
-
     <div class="btn">
       <div class="name">
-        <h2>{{barName}}</h2>
+        <h2>{{ barName }}</h2>
       </div>
-      <button
-        mat-flat-button
-        *ngFor="let product of list; let i = index"
-        [class]="'product-class product-' + i"
-        color="primary">
-        <mat-icon>{{product.icon}}</mat-icon>
+      <button mat-flat-button *ngFor="let product of list" color="primary">
+        <mat-icon>{{ product.icon }}</mat-icon>
         {{ product.nome }}
       </button>
     </div>

@@ -29,15 +29,13 @@ h1 {
   width: 400px;
 }
 
-.btnEnter{
+.btnEnter {
   display: flex;
 }
 
-
-.btnEnterField{
+.btnEnterField {
   width: 200px;
   height: 60px;
-
 }
 
 @media (max-width: 390px) {
@@ -45,7 +43,7 @@ h1 {
     width: 90vw !important;
   }
 
-  .btnEnterField{
+  .btnEnterField {
     width: 90vw !important;
   }
 }

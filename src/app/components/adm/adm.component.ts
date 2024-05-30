@@ -10,15 +10,15 @@ import { environment } from '../../../environments/environment.development';
 export class AdmComponent {
   constructor(private router: Router) {}
 
-  barName = environment.barName
+  barName = environment.barName;
 
   list = [
-    { nome: `Produtos`, routerLink: '', icon:'width_full' },
-    { nome: `Estoque`, routerLink: '/stock', icon:'event_list' },
-    { nome: `Usuários`, routerLink: '', icon:'progress_activity' },
-    { nome: `Histórico`, routerLink: '', icon:'swipe_left_alt' },
-    { nome: `Mesas`, routerLink: '/tables', icon:'keyboard_option_key' },
-    { nome: `Pedidos`, routerLink: '', icon:'' },
-    { nome: `Gorjetas`, routerLink: '', icon:'' },
+    { nome: `Produtos`, routerLink: '', icon: 'lists' },
+    { nome: `Estoque`, routerLink: '/stock', icon: 'inventory' },
+    { nome: `Usuários`, routerLink: '', icon: 'person' },
+    { nome: `Histórico`, routerLink: '', icon: 'cloud_done' },
+    { nome: `Mesas`, routerLink: '/tables', icon: 'table_restaurant' },
+    { nome: `Pedidos`, routerLink: '', icon: 'summarize' },
+    { nome: `Gorjetas`, routerLink: '', icon: 'attach_money' },
   ];
 }

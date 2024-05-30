@@ -1,0 +1,99 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section {
+  width: 350px;
+  height: 230px;
+  text-align: center;
+}
+.status {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pedidos-prontos {
+  background: #1f84f0;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+  }
+}
+
+.text {
+  color: #1f84f0;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 10px;
+
+  button {
+    width: 350px;
+    height: 230px;
+    border-radius: 19px;
+    font-size: 25px;
+  }
+  mat-icon {
+    font-size: 25px;
+    padding: 7px;
+  }
+}
+
+@media (max-width: 390px) {
+  h1 {
+    font-size: 22px;
+  }
+  .section {
+    width: 120px;
+    height: 120px;
+  }
+  .name {
+    h2 {
+      font-size: 16px;
+    }
+  }
+  .status {
+    margin-top: 15px;
+  }
+  .pedidos-prontos {
+    width: 50px;
+    height: 50px;
+    span {
+      font-size: 25px;
+    }
+  }
+  .text {
+    font-size: 16px;
+    margin-top: 4px;
+  }
+  .buttons {
+    button {
+      width: 120px;
+      height: 120px;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+    mat-icon {
+      font-size: 13px;
+      padding: 0px;
+    }
+  }
+}
